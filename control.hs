@@ -1,13 +1,13 @@
 import Control.Parallel
 
---Guard case showing different paths and a catch-all
+--Guard case showing different paths and a catch-all at the end.
 describeInt :: Int -> String
 describeInt a
  | a == 0 = "This is a zero"
  | a > 0 = "This is a positive integer"
- | otherwise = "This is a negative integer" --Otherwise == True and used as a catch-all
+ | otherwise = "This is a negative integer" --Otherwise == True and used as a catch-all at the end.
  
- -- Similar to guards, haskells version of a switch statement
+ -- Similar to guards, Haskell's version of a switch statement.
 caseExample :: [Char] -> [Char]
 caseExample color =
  case color of
@@ -24,7 +24,7 @@ factorial n = n * factorial(n-1)
 --Same as factorial for parallel example
 evensSquared x = [a^2 | a <- [0..x], a `mod` 2 == 0]
  
---Multicore main function splits up the tasks into 4 parts and a case statement at the end
+--Multi threaded main function splits up the tasks into 4 parts(a,b,c,d) and a case statement at the end.
 main = a `par` b `par` c`par` d `par`
  do
   putStrLn $"Factorial of 12: " ++ show (a) ++ " Evens from 0 to 6 squared" ++ show (b)
